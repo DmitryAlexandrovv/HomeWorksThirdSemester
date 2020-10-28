@@ -1,0 +1,49 @@
+.carousel {
+    width: 600px;
+    height: 400px;
+
+    margin: 0 auto;
+}
+
+.main {
+    padding-top: 56px;
+}
+
+.carousel img {
+    display: block;
+    width: 600px;
+    height: 400px;
+}
+
+.first-display {
+    height: calc(100vh - 56px);
+    background: url("https://hips.hearstapps.com/amv-prod-gp.s3.amazonaws.com/gearpatrol/wp-content/uploads/2018/06/M2W-JDM-Importing-gear-patrol-lead-full-CINE.jpg?crop=0.75xw:1xh;center,top&resize=640:*");
+    background-size: cover;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+}
+
+.card h5{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

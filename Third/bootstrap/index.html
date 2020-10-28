@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>JDM</title>
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">JDM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <button type="button" class="btn btn-primary ml-5" data-toggle="modal" data-target="#exampleModal">
+                    Sign in
+                </button>
+            </div>
+        </nav>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="form-signin d-flex flex-column align-items-center">
+                        <h1 class="h3 mb-4 mt-4 font-weight-normal">Please sign in</h1>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control mb-2" placeholder="Password" required>
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <section class="main">
+            <div class="first-display">
+                <div class="container">
+                    <div class="row justify-content-between pt-5">
+                        <div class="card col-4">
+                            <img src="https://s.auto.drom.ru/i24207/c/photos/generations/500x_nissan_skyline_g4218.jpg?695609" class="card-img-to pt-3" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Nissan R33</h5>
+                              <p class="card-text">Девятое поколение Nissan Skyline (кузова серии R33) вышло в свет в 1993 году. В нем воплощена концепция Grand Touring Car с превосходными ходовыми характеристиками. В отличие от прежнего поколения (R32), где пристальное внимание уделялось движению в ущерб пространству задних сидений, новый Skyline сочетает в себе и великолепные ходовые качества, и комфорт седана бизнес-класса. В результате новых конструктивных решений колесная база автомобиля выросла более чем на 100 мм, увеличились габариты кузова, соответственно расширилось и внутреннее пространство. Благодаря улучшенной подвеске автомобиль остается устойчивым даже при езде на высокоскоростных дорогах, делая поездку на большое расстояние быстрой и приятной.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card col-4">
+                            <img src="https://s.auto.drom.ru/img1/catalog/photos/generations/500x_mitsubishi_lancer_evolution_g978.jpg?21315" class="card-img-top pt-3" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Mitsubishi Lancer Evolution 2006, седан, 9 поколение</h5>
+                              <p class="card-text">Mitsubishi Lancer Evolution IX - это серийная версия раллийного автомобиля, участвующего в чемпионате мира WRC (World Rally Car) и внедорожных ралли-рейдах. На эти автомобили устанавливается 4-цилиндровый, 16-клапанный двигатель 4G63T объемом 2 литра с турбонадувом и промежуточным охладителем воздуха.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card col-4">
+                            <img src="https://s.auto.drom.ru/i24199/c/photos/fullsize/toyota/supra/gen144x2_toyota_supra_597600.jpg" class="card-img-top pt-3" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">Toyota Supra 1993, купе, 4 поколение, A80</h5>
+                              <p class="card-text">Toyota Supra четвертого поколения получила совершенно новый дизайн. От прежних угловатых моделей новинка, представленная в 1993 году на автошоу в Детройте, отличалась «дутыми» формами, очень выразительным «глазастым» передком и весьма эффектными круглыми линзами задней оптики. Плавные изгибы крыльев, а также встроенное в заднюю крышку мощное антикрыло делали облик автомобиля очень гармоничным. Модель по-прежнему базируется на одной платформе с Soarer (Z30), но у более короткой Супры меньше расстояние между осями, а топливный бак расположен не под задним сиденьем, а под багажником для лучшей развесовки. Автомобиль получил новые бензиновые 3,0-литровые «шестерки» на основе серии 2JZ (225 и 280 л.с., атмосферный и турбо) и — впервые — 6-ступенчатую механическую коробку передач.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
