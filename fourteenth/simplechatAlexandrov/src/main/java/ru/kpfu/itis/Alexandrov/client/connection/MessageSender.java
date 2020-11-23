@@ -34,7 +34,8 @@ public class MessageSender implements Runnable{
                 while (true) {
                     // Отправка данных на сервер
                     Scanner scanner = new Scanner(System.in);
-                    socket.sendMessage(new Message(scanner.nextLine().getBytes(), Type.TEXT));
+                    Message request = Message.createMessage(Type.TEXT, scanner.nextLine().getBytes());
+                    socket.sendMessage(request);
                 }
             }
         } catch (UnknownHostException ex) {

@@ -1,6 +1,8 @@
 package ru.kpfu.itis.Alexandrov.server.connection;
 
-import com.sun.org.apache.xpath.internal.operations.String;
+import ru.kpfu.itis.Alexandrov.client.SocketClient;
+import ru.kpfu.itis.Alexandrov.client.exceptions.ClientException;
+import ru.kpfu.itis.Alexandrov.protocol.Message;
 import ru.kpfu.itis.Alexandrov.server.Server;
 
 import java.io.*;
@@ -24,30 +26,14 @@ public class Connection implements Runnable {
         try{
             while (true) {
                 // Получение данных от клиента.
-                InputStream fromClient = socket.getInputStream();
-                int b;
-                StringBuffer line = new StringBuffer();
-
-                while((b = fromClient.read()) != 255){
-                    line.append((char) b);
-                }
+                Message response = Message.readMessage(socket.getInputStream());
 
                 // Ответ клиенту.
                 Iterator<Connection> iterator = server.connectionsIterator();
                 while(iterator.hasNext()){
                     Connection connection = iterator.next();
                     if (!connection.equals(this)) {
-                        OutputStream os = connection.getSocket().getOutputStream();
-
-                        byte[] data = line.toString().getBytes();
-                        byte[] bytes = new byte[data.length + 1];
-                        for(int i = 0;i < data.length;i++){
-                            bytes[i] = data[i];
-                        }
-                        bytes[data.length] = -1;
-
-                        os.write(bytes);
-                        os.flush();
+                        sendMessage(response, connection.getSocket());
                     }
                 }
             }
@@ -61,6 +47,15 @@ public class Connection implements Runnable {
             } catch (SocketTimeoutException ste) {
                 System.out.println("Turn off the server by timeout");
             }
+        }
+    }
+
+    public void sendMessage(Message message, Socket socket) {
+        try {
+            socket.getOutputStream().write(Message.getBytes(message));
+            socket.getOutputStream().flush();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

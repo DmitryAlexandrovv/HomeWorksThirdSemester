@@ -1,5 +1,6 @@
 package ru.kpfu.itis.Alexandrov.server;
 
+import ru.kpfu.itis.Alexandrov.client.Type;
 import ru.kpfu.itis.Alexandrov.protocol.Protocol;
 
 import java.io.*;

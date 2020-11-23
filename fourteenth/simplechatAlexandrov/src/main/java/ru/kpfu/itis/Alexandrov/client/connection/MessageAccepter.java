@@ -5,6 +5,8 @@ import ru.kpfu.itis.Alexandrov.client.Type;
 import ru.kpfu.itis.Alexandrov.client.exceptions.ClientException;
 import ru.kpfu.itis.Alexandrov.protocol.Message;
 
+import java.io.IOException;
+
 public class MessageAccepter implements Runnable{
     private SocketClient socket;
     private Thread thread;
@@ -20,12 +22,12 @@ public class MessageAccepter implements Runnable{
         try {
             while (true) {
                 // Ответ сервера
-                Message message = socket.getMessage();
+                Message message = Message.readMessage(socket.getInputStream());
                 if(message.getType().equals(Type.TEXT)){
                     System.out.println(new String(message.getData()));
                 }
             }
-        } catch (ClientException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

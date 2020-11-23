@@ -37,26 +37,25 @@ public class SocketClient implements Client{
     @Override
     public void sendMessage(Message message) throws ClientException{
         try {
-            OutputStream os = socket.getOutputStream();
-            os.write(message.getBytes(message));
-            os.flush();
+            socket.getOutputStream().write(Message.getBytes(message));
+            socket.getOutputStream().flush();
         } catch (IOException e) {
             throw new ClientException("Can't connect", e);
         }
     }
 
-    @Override
-    public Message getMessage() throws ClientException {
-        try {
-            InputStream fromServer = socket.getInputStream();
-            int b;
-            StringBuffer line = new StringBuffer();
-            while((b = fromServer.read()) != 255){
-                line.append((char) b);
-            }
-            return new Message(line.toString().getBytes(), Type.TEXT);
-        } catch (IOException e) {
-            throw new ClientException("Can't connect", e);
-        }
-    }
+//    @Override
+//    public Message getMessage() throws ClientException {
+//        try {
+//            InputStream fromServer = socket.getInputStream();
+//            int b;
+//            StringBuffer line = new StringBuffer();
+//            while((b = fromServer.read()) != 255){
+//                line.append((char) b);
+//            }
+//            return new Message(line.toString().getBytes(), Type.TEXT);
+//        } catch (IOException e) {
+//            throw new ClientException("Can't connect", e);
+//        }
+//    }
 }
